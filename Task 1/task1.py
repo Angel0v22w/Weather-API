@@ -1,11 +1,19 @@
 import requests
 import random
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_KEY = os.environ.get('API_KEY')
 
 
-API_KEY = "e21360b47c0180cd74537bf5a9427cb1"
+CITIES = ["Tokyo", "Delhi", "Shanghai", "São Paulo", "Mexico City", "New York City", 
+          "Cairo", "Buenos Aires", "Dhaka", "Moscow", "Lagos", "London", 
+          "Istanbul", "Paris", "Seoul", "Osaka", "Rio de Janeiro", "Los Angeles", 
+          "Beijing", "Karachi", "Bogotá", "Johannesburg", "Chennai", "Jakarta", 
+          "Bangkok", "Berlin", "Toronto", "Rome", "Sydney", "Madrid"]
 
-# Списък с градове
-CITIES = ["London", "Paris", "New York", "Tokyo", "Sydney"]
 
 # Функция за извеждане на информация за времето
 def get_weather_info(city):
