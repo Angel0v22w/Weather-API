@@ -30,7 +30,7 @@ def get_weather_info(city):
 # Избор на 5 произволни града
 random_cities = random.sample(CITIES, 5)
 
-# Показване на информация за 5-те града
+
 for city in random_cities:
     weather, temperature, humidity = get_weather_info(city)
     print(f"**{city}**")
@@ -39,7 +39,7 @@ for city in random_cities:
     print(f"Влажност: {humidity}%")
     print()
 
-# Изчисляване на статистики
+
 min_temperature = float("inf")
 total_temperature = 0
 
@@ -50,11 +50,10 @@ for city in random_cities:
 
 average_temperature = total_temperature / len(random_cities)
 
-# Показване на статистики
 print(f"Coldest city: {min_temperature:.1f}°C ({random_cities[int(min_temperature)]})")
 print(f"Average temperature: {average_temperature:.1f}°C")
 
-# Въвеждане на град от потребителя
+
 
 question = input('Do you want the weather for another city? y/n \n').lower()
 
