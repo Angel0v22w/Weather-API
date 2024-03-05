@@ -15,7 +15,7 @@ CITIES = ["Tokyo", "Delhi", "Shanghai", "São Paulo", "Mexico City", "New York C
           "Bangkok", "Berlin", "Toronto", "Rome", "Sydney", "Madrid"]
 
 
-# Функция за извеждане на информация за времето
+
 def get_weather_info(city):
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
     response = requests.get(url)
@@ -27,7 +27,7 @@ def get_weather_info(city):
 
     return weather, temperature, humidity
 
-# Избор на 5 произволни града
+
 random_cities = random.sample(CITIES, 5)
 
 
@@ -39,21 +39,25 @@ for city in random_cities:
     print(f"Влажност: {humidity}%")
     print()
 
+def find_city(min_temp):
+    for key, value in all_temp.items():
+        if value == min_temp:
+            return key
 
-min_temperature = float("inf")
+
 total_temperature = 0
+all_temp = {}
 
 for city in random_cities:
     weather, temperature, humidity = get_weather_info(city)
-    min_temperature = min(min_temperature, temperature)
+    all_temp[city] = temperature
     total_temperature += temperature
 
 average_temperature = total_temperature / len(random_cities)
+min_temp = min(all_temp.values())
 
-print(f"Coldest city: {min_temperature:.1f}°C ({random_cities[int(min_temperature)]})")
+print(f"Coldest city: {min_temp:.1f}°C ({find_city(min_temp)})")
 print(f"Average temperature: {average_temperature:.1f}°C")
-
-
 
 question = input('Do you want the weather for another city? y/n \n').lower()
 
@@ -67,6 +71,10 @@ if question == 'y':
         print(f"Време: {weather}")
         print(f"Температура: {temperature:.1f}°C")
         print(f"Влажност: {humidity}%")
-
         break
+
+
+
+
+
 
