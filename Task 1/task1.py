@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 import random
 import os
 from dotenv import load_dotenv
@@ -6,14 +7,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 API_KEY = os.environ.get('API_KEY')
+cities = pd.read_csv('worldcities.csv')
 
 
-CITIES = ["Tokyo", "Delhi", "Shanghai", "São Paulo", "Mexico City", "New York City", 
-          "Cairo", "Buenos Aires", "Dhaka", "Moscow", "Lagos", "London", 
-          "Istanbul", "Paris", "Seoul", "Osaka", "Rio de Janeiro", "Los Angeles", 
-          "Beijing", "Karachi", "Bogotá", "Johannesburg", "Chennai", "Jakarta", 
-          "Bangkok", "Berlin", "Toronto", "Rome", "Sydney", "Madrid"]
-
+CITIES = cities['city']
 
 
 def get_weather_info(city):
@@ -28,7 +25,7 @@ def get_weather_info(city):
     return weather, temperature, humidity
 
 
-random_cities = random.sample(CITIES, 5)
+random_cities = random.sample(CITIES.tolist(), 5)
 
 
 for city in random_cities:
