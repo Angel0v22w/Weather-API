@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+    background-color: antiquewhite;
+}
+
+body {
+    background: chartreuse;
+}
+
+
+.content {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(90deg, transparent, #831a00);
+    margin-top: 90px;
+    justify-content: center;
+    align-items: center;
+}
+
+.city-info {
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    color: #000000;
+    text-shadow: 0 5 5 #831a00;
+    margin-left: 30px;
+}
+
+.total_info {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    margin-top: 100px;
+}
