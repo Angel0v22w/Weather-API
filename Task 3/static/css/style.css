@@ -1,39 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body{
+    background-color: rgba(238, 237, 237, 0.33);
+    color: rgb(53, 52, 52);
+    font-family: sans-serif;
 
-html {
-    background-color: antiquewhite;
+ 
+
 }
-
-body {
-    background: chartreuse;
-}
-
-
-.content {
-    font-family: "Roboto", sans-serif;
+.container{
     display: flex;
-    flex-direction: row;
-    background: linear-gradient(90deg, transparent, #831a00);
-    margin-top: 90px;
-    justify-content: center;
-    align-items: center;
+    margin-top: 80px;
+    background-color: #ffffff;
+    border-color: #ffffff;
 }
 
-.city-info {
+
+   
+
+
+
+
+
+.card{
+    padding: 10px;
+    background-color: rgba(238, 237, 237, 0.22);
+    border-color: rgba(238, 237, 237, 0.22);
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    text-align: center;
+    display: flex;
+    flex-grow: 3;
+}
+
+.info{
+    margin-top: 50px;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.stats{
+    padding: 10px;
+    background-color: rgba(238, 237, 237, 0.22);
+    border-color: rgba(238, 237, 237, 0.22);
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    font-family: "Roboto", sans-serif;
-    font-size: 24px;
-    color: #000000;
-    text-shadow: 0 5 5 #831a00;
-    margin-left: 30px;
+    align-items: center;
+    
 }
 
-.total_info {
-    font-family: "Roboto", sans-serif;
-    font-size: 16px;
+.another-city{
+    padding: 10px;
+    background-color: rgba(238, 237, 237, 0.22);
+    border-color: rgba(238, 237, 237, 0.22);
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    text-align: center;
+    display: flex;
+    
+    
+}
+    
+    
+    
+
+@media(max-width:768px){
+    .card{
+        margin: 1.5rem;
+    }
+}
+.title{
+    display: flex;
     justify-content: center;
-    align-items: center;
-    background: #000000;
-    margin-top: 100px;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+.title p{
+    margin-bottom: 0.2rem;
+    font-size: 1.2rem;
+}
+.temp{
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+}
+.header{
+    color: #000000;
+}
+.col-4{
+    padding: 0 0.2rem;
+}
+.icon{
+    align-self: flex-end;
+    margin-right: -2.5rem;
+    margin-top: -2rem;
+    z-index: 999;
+}
+.icon img{
+    width: 5rem;
+}
+
+.row{
+    justify-content: center;
 }
