@@ -17,10 +17,13 @@ app = Flask(__name__)
 
 
 def city_weather():
-    '''This fucntion does something.'''
+    '''This fucntion takes 5 random cities from the worldcities.csv file and sends them to the weather platform 
+        and receives information about the weather for these five cities.'''
     counter = 0
     all_cities = {}
     total_temp = 0
+    #checking for every city if it exist in the weather platform if it doesnt removes the city from the csv file 
+    #until it finds 5 valid cities.
     while counter != 5:
         random_city = random.sample(CITIES.tolist(), 1)
         random_city = random_city[0]
@@ -44,36 +47,33 @@ def city_weather():
 
     
       
+    # Get the min temp for all five cities
     min_temp = 1000
     coldest_city = ''
     for k,v in all_cities.items():
-        # Get the min temp for all five cities
         current_temp = v[1]
         if current_temp < min_temp:
             min_temp = current_temp
             coldest_city = k
 
-        # Get the average temp for all five cities
+    # Get the average temp for all five cities
     average_temperature = total_temp / 5
     average_temperature = round(average_temperature,1)
 
     return all_cities, min_temp, average_temperature, coldest_city
 
 
-
+# the main route
 @app.route('/')
 def test():
-
-
     all_city, min_temp, average_temperature, coldest_city = city_weather()
-
     return render_template('index.html', lines = all_city, min_temp=min_temp, average_temperature=average_temperature, coldest_city=coldest_city)   
-  
+
+#This route is used where the user wants to search for a specific city
 @app.route("/submit")
 def submit():
     city = request.form.get('city')
     while True:
-
         url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
         response = requests.get(url)
         if response.status_code == 200:
@@ -89,6 +89,10 @@ def submit():
             continue
 
     return render_template('another_city.html', city = city, weather = weather, temperature = temperature, humidity = humidity)
+
+
+
+  
 
 
 
