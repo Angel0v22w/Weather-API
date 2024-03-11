@@ -41,6 +41,8 @@ def city_weather():
             df = df.drop(df[df['city'] == random_city].index)
             print(f"City: {random_city} has been removed.")
             continue
+
+    
       
     min_temp = 1000
     coldest_city = ''
@@ -58,23 +60,39 @@ def city_weather():
     return all_cities, min_temp, average_temperature, coldest_city
 
 
+
 @app.route('/')
 def test():
+
+
     all_city, min_temp, average_temperature, coldest_city = city_weather()
 
-    return render_template('test.html', lines = all_city, min_temp=min_temp, average_temperature=average_temperature, coldest_city=coldest_city)   
+    return render_template('index.html', lines = all_city, min_temp=min_temp, average_temperature=average_temperature, coldest_city=coldest_city)   
   
-@app.route("/submit", methods=["POST"])
+@app.route("/submit")
 def submit():
     city = request.form.get('city')
-    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
-    response = requests.get(url)
-    data = response.json()
-    weather = data["weather"][0]["main"]
-    temperature = float(data["main"]["temp"])
-    humidity = data["main"]["humidity"]
+    while True:
 
-    return render_template('test.html', new_city=city, weather = weather, temperature=temperature, humidity=humidity )
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
+        response = requests.get(url)
+        if response.status_code == 200:
+            data = response.json()
+            weather = data["weather"][0]["main"]
+            temperature = data["main"]["temp"]
+            humidity = data["main"]["humidity"]
+            break
+        else:
+            df = pd.read_csv("worldcities.csv")
+            df = df.drop(df[df['city'] == city].index)
+            print(f"City: {city} has been removed.")
+            continue
+
+    return render_template('another_city.html', city = city, weather = weather, temperature = temperature, humidity = humidity)
+
+
+
+
 
 
 

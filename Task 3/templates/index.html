@@ -6,7 +6,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" >
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" rel="stylesheet" >
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet" >
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/test.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
     <meta charset="UTF-8">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,54 +67,9 @@
         <input type="text" name="city" id="username">
     </form>
 
-    <div class="another-city">
-        <div class="card">
-            {% if weather== 'Clear' %}
-            <span class="icon"><img class="img-fluid" src="https://img.icons8.com/emoji/96/000000/sun-emoji.png"/></span>
-            {% elif weather == 'Clouds' %}
-                <span class="icon"><img class="img-fluid" src="https://img.icons8.com/office/80/000000/partly-cloudy-day.png"/></span>
-            {% elif weather == 'Rain' %}
-                <span class="icon"><img class="img-fluid" src='../static/img/rain.png'/></span>
-            {% elif weather == 'Mist' %}
-                <span class="icon"><img class="img-fluid" src='../static/img/mist.png'/></span>
-            {% elif weather == 'Drizzle' %}
-                <span class="icon"><img class="img-fluid" src='../static/img/drizzle.png'/></span>   
-            {% elif weather == 'Thunderstorm' %}
-                <span class="icon"><img class="img-fluid" src='../static/img/thunderstorm.png'/></span>    
-            {% elif weather == 'Snow' %}
-                <span class="icon"><img class="img-fluid" src='../static/img/snowflake.png'/></span> 
-            {% elif weather == 'Haze' %}
-                <span class="icon"><img class="img-fluid" src='../static/img/haze.png'/></span>                                                                                   
-            {% endif %}
-            <div class="title"><p>{{new_city}}</p></div>
-            <div class="temp">{{temperature}} °C</div>
-                <div class="row">
-                    <div class="col-4">
-                        <div class="header">Weather</div>
-                        <div class="value">{{weather}}</div>
-                    </div>
-                    <div class="col-4">
-                        <div class="header">Humidity</div>
-                        <div class="value">{{humidity}} %</div>
-                    </div>
-
-                </div>
-                
-        </div>
-                
-
-        
 
 </div>
-    
-            
-        
-    
-    
-
-
-    
-
+                
     
 </body>
 </html>

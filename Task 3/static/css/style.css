@@ -30,6 +30,8 @@ body{
     flex-grow: 3;
 }
 
+
+
 .info{
     margin-top: 50px;
     background-color: #ffffff;
@@ -58,7 +60,7 @@ body{
     box-shadow: 5px 6px 6px 2px #e9ecef;
     text-align: center;
     display: flex;
-    
+    flex-basis: 0;
     
 }
     
@@ -98,6 +100,14 @@ body{
     margin-top: -2rem;
     z-index: 999;
 }
+.new_icon{
+    align-self: flex-end;
+    margin-right: -2.5rem;
+    margin-top: -2rem;
+    z-index: 999;
+
+}
+
 .icon img{
     width: 5rem;
 }
