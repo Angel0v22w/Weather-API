@@ -1,0 +1,117 @@
+body{
+    background-color: rgba(238, 237, 237, 0.33);
+    color: rgb(53, 52, 52);
+    font-family: sans-serif;
+
+ 
+
+}
+.container{
+    display: flex;
+    margin-top: 80px;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+   
+
+
+
+
+
+.card{
+    padding: 10px;
+    background-color: rgba(238, 237, 237, 0.22);
+    border-color: rgba(238, 237, 237, 0.22);
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    text-align: center;
+    display: flex;
+    flex-grow: 3;
+}
+
+
+
+.info{
+    margin-top: 50px;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.stats{
+    padding: 10px;
+    background-color: rgba(238, 237, 237, 0.22);
+    border-color: rgba(238, 237, 237, 0.22);
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.another-city{
+    padding: 10px;
+    background-color: rgba(238, 237, 237, 0.22);
+    border-color: rgba(238, 237, 237, 0.22);
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    text-align: center;
+    display: flex;
+    flex-basis: 0;
+    
+}
+    
+    
+    
+
+@media(max-width:768px){
+    .card{
+        margin: 1.5rem;
+    }
+}
+.title{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+.title p{
+    margin-bottom: 0.2rem;
+    font-size: 1.2rem;
+}
+.temp{
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+}
+.header{
+    color: #000000;
+}
+.col-4{
+    padding: 0 0.2rem;
+}
+.icon{
+    align-self: flex-end;
+    margin-right: -2.5rem;
+    margin-top: -2rem;
+    z-index: 999;
+}
+.new_icon{
+    align-self: flex-end;
+    margin-right: -2.5rem;
+    margin-top: -2rem;
+    z-index: 999;
+
+}
+
+.icon img{
+    width: 5rem;
+}
+
+.row{
+    justify-content: center;
+}
