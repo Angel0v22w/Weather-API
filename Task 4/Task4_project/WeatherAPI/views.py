@@ -34,7 +34,7 @@ def city_weather():
             counter += 1
         else:
             # Read the CSV file into a DataFrame
-            df = pd.read_csv("worldcities.csv")
+            df = pd.read_csv("../../worldcities.csv")
             df = df.drop(df[df['city'] == random_city].index)
             print(f"City: {random_city} has been removed.")
             continue
@@ -61,4 +61,15 @@ def city_weather():
 # Create your views here.
 
 def home(request):
-    return render(request, "home.html")
+  all_cities, min_temp, average_temperature, coldest_city = city_weather()
+
+  # Create a context dictionary to hold all the data
+  context = {
+      'all_cities': all_cities,
+      'min_temp': min_temp,
+      'average_temperature': average_temperature,
+      'coldest_city': coldest_city,
+  }
+
+  return render(request, "home.html", context)
+
