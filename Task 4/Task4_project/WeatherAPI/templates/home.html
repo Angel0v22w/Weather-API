@@ -1,4 +1,61 @@
 {% extends "base.html" %} {% block title %} Home Page {% endblock %}
 {% block content %}
-<p>This is home page</p>
+
+    
+<div class="container">
+    
+    {% for city, data in all_cities.items %}
+        <div class="card">
+            {% if data == 'Clear' %}
+                <span class="icon"><img class="img-fluid" src="https://img.icons8.com/emoji/96/000000/sun-emoji.png"/></span>
+                {% elif data == 'Clouds' %}
+                    <span class="icon"><img class="img-fluid" src="https://img.icons8.com/office/80/000000/partly-cloudy-day.png"/></span>
+                {% elif data == 'Rain' %}
+                    <span class="icon"><img class="img-fluid" src='../static/img/rain.png'/></span>
+                {% elif data == 'Mist' %}
+                    <span class="icon"><img class="img-fluid" src='../static/img/mist.png'/></span>
+                {% elif data == 'Drizzle' %}
+                    <span class="icon"><img class="img-fluid" src='../static/img/drizzle.png'/></span>   
+                {% elif data == 'Thunderstorm' %}
+                    <span class="icon"><img class="img-fluid" src='../static/img/thunderstorm.png'/></span>    
+                {% elif data == 'Snow' %}
+                    <span class="icon"><img class="img-fluid" src='../static/img/snowflake.png'/></span> 
+                {% elif data == 'Haze' %}
+                    <span class="icon"><img class="img-fluid" src='../static/img/haze.png'/></span>                                                                                   
+                {% endif %}
+            <div class="title"><p>{{city}}</p></div>
+            <div class="temp">{{data}} °C</div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="header">Weather</div>
+                        <div class="value">{{data}}</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="header">Humidity</div>
+                        <div class="value">{{data}} %</div>
+                    </div>
+
+                </div>
+                
+        </div>
+        
+        {% endfor %}
+</div>
+<div class="info">
+
+    <div class="stats">
+        <li>Minimal temperature {{min_temp}} °C</li>
+        <li>Coldest city {{coldest_city}}</li>
+        <li>Average temperature {{average_temperature}} °C</li>
+    </div>
+        
+    <form method="POST" action="/submit">
+        <label for="username">City:</label>
+        <input type="text" name="city" id="username">
+    </form>
+
+
+</div>
+                
+
 {% endblock %}
