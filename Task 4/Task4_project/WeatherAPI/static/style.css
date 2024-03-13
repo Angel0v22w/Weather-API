@@ -11,6 +11,7 @@ body{
     margin-top: 80px;
     background-color: #ffffff;
     border-color: #ffffff;
+    justify-content: space-between;
 }
 
 
@@ -37,19 +38,22 @@ body{
     background-color: #ffffff;
     border-color: #ffffff;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    
+    
 }
 
 
 .stats{
+    display: flex;
     padding: 10px;
     background-color: rgba(238, 237, 237, 0.22);
     border-color: rgba(238, 237, 237, 0.22);
     box-shadow: 5px 6px 6px 2px #e9ecef;
     text-align: center;
-    display: flex;
     flex-direction: column;
     align-items: center;
+    
     
 }
 
